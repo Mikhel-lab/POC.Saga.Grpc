@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "Onboarding.Zeth.Poc.API.Protos";
+
+service OnboardProtoService{
+	rpc OnboardCustomer(OnboardRequest) returns (OnboardResponse);
+}
+
+message OnboardRequest{
+	string RIN = 1;
+	string Email = 2;
+	string Token = 3;
+	
+}
+
+
+message GetFeedbackResponse{
+	string Result = 1;
+	
+}
+
+enum Status{
+	INPROGRESS = 0;
+	COMPLETED = 1;
+}
+
+
+
+message OnboardResponse{
+	string RIN = 1;
+	string Email = 2;
+	string Token = 3;
+}
+
+message GetFeedbackRequest{
+	string CustomerId = 1;
+	
+}

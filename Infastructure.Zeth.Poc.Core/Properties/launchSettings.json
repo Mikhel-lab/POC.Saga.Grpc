@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Infastructure.Zeth.Poc.Core": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55251;http://localhost:55255"
+    }
+  }
+}

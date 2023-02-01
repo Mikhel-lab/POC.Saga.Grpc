@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Infastructure.Zeth.Poc.API.Protos";
+
+
+
+service InfastructureProtoService{
+	rpc ProvisionResources(ProvisionResourcesRequest) returns (ProvisionResourcesResponse);
+}
+
+message ProvisionResourcesRequest{
+	string Id = 1;
+}
+
+enum Status{
+	INPROGRESS = 0;
+	COMPLETED = 1;
+}
+
+
+
+message ProvisionResourcesResponse{
+	string Result = 1;
+}

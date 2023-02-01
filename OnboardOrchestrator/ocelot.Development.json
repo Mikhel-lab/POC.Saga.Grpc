@@ -1,0 +1,52 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "api/v1/onboard/OnboardUser",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "http://localhost:12665",
+          "Port": 44333
+        }
+      ],
+      "UpstreamPathTemplate": "api/v1/onboard/GetOnboardUser",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/hr/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "http://localhost:8810",
+          "Port": 44309
+        }
+      ],
+      "UpstreamPathTemplate": "/hr/{catchAll}",
+      "UpstreamHttpMethod": [ "Post", "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "api/v1/infastructure/{ValidateCredentials}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "http://localhost:33486",
+          "Port": 44379
+        }
+      ],
+      "UpstreamPathTemplate": "api/v1/infastructure/{Validate}",
+      "UpstreamHttpMethod": [ "Post", "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "api/v1/infastructure/{provision}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "http://localhost:45320",
+          "Port": 44376
+        }
+      ],
+      "UpstreamPathTemplate": "api/v1/infastructure/{resource}",
+      "UpstreamHttpMethod": [ "Post", "Get" ]
+    }
+  ]
+}

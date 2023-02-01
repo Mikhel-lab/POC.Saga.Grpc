@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "Security.Zeth.Poc.API.Protos";
+
+
+service SecurityProtoService{
+	rpc ValidateCredentials(ValidateCredentialsRequest) returns (ValidateCredentialsResponse);
+}
+
+message ValidateCredentialsRequest{
+	string Id = 1;
+	string RIN = 2;
+	string Email = 3;
+	string Token = 4;
+}
+
+enum Status{
+	INPROGRESS = 0;
+	COMPLETED = 1;
+}
+
+
+
+message ValidateCredentialsResponse{
+	string Result = 1;
+}

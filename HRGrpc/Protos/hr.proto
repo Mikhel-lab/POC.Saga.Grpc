@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "Hr.Zeth.Poc.API.Protos";
+
+
+service HrProtoService{
+	rpc GetOnboardingCustomer(OnboardingRequest) returns (OnboardingResponse);
+	rpc GetAllOnboardingCustomer(AllOnboardingRequest) returns (stream OnboardingResponse);
+}
+
+message OnboardingRequest{
+	string Id = 1;
+	string Email = 2;
+	string RIN = 3;
+	string Token = 4;
+	
+}
+
+message AllOnboardingRequest{
+
+}
+
+message OnboardingResponse{
+	string Id = 1;
+	string Email = 2;
+	string RIN = 3;
+	string Token = 4;
+}
