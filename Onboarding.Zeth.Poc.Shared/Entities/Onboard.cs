@@ -10,7 +10,5 @@ namespace Onboarding.Zeth.Poc.Shared.Entities
     public class Onboard : OnboardingEntityBase
     {
         public string RIN { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Token { get; set; } = string.Empty;
     }
 }

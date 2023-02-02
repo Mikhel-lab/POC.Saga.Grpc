@@ -24,12 +24,25 @@ enum Status{
 	COMPLETED = 1;
 }
 
+message Department{
+	string Id = 1;
+	string Name = 2;
+	string Description = 3;
+}
+							
+message DepartmentConfig{
+	string Id = 1;
+	string DepartmentId = 2;
+	repeated string Configuration = 3;
+}
 
 
 message OnboardResponse{
 	string RIN = 1;
 	string Email = 2;
-	string Token = 3;
+	repeated Department department = 3;
+	repeated Configuration config = 4;
+	
 }
 
 message GetFeedbackRequest{

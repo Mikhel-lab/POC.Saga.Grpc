@@ -27,23 +27,23 @@ namespace StateMachine
             while (!stoppingToken.IsCancellationRequested)
             {
               
-                    //1. get the onboarding user
-                    using var channel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:OnboardingMember"));
-                    var Onbclient = new OnboardProtoService.OnboardProtoServiceBase(channel);
-                    var response = await Onbclient.OnboardCustomer(await _stateFactory.Generate());
+                    ////1. get the onboarding user
+                    //using var channel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:OnboardingMember"));
+                    //var Onbclient = new OnboardProtoService(channel);
+                    //var response = await Onbclient.OnboardCustomer(await _stateFactory.Generate());
 
 
-                    //2. Retrieve onboarding user for Hr from Onboarding table
-                    using var HrChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:HrServerUrl"));
-                    var hRClient = new HrProtoService.HrProtoServiceBase(productChannel);
+                    ////2. Retrieve onboarding user for Hr from Onboarding table
+                    //using var HrChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:HrServerUrl"));
+                    //var hRClient = new HrProtoService.HrProtoServiceBase(productChannel);
 
-                    //3. Retrieve onboarding user for HR from Hr table
-                    using var InfastructureChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:InfastructureServerUrl"));
-                    var infastrClient = new InfastructureProtoService.InfastructureProtoServiceBase(InfastructureChannel);
+                    ////3. Retrieve onboarding user for HR from Hr table
+                    //using var InfastructureChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:InfastructureServerUrl"));
+                    //var infastrClient = new InfastructureProtoService.InfastructureProtoServiceBase(InfastructureChannel);
 
-                    //4 Retrieve onboarding user for security from Infastructure table
-                    using var securityChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:SecurityServerUrl"));
-                    var productClient = new SecurityProtoService.SecurityProtoServiceBase(securityChannel);
+                    ////4 Retrieve onboarding user for security from Infastructure table
+                    //using var securityChannel = GrpcChannel.ForAddress(_configuration.GetValue<string>("WorkerService:SecurityServerUrl"));
+                    //var productClient = new SecurityProtoService.SecurityProtoServiceBase(securityChannel);
              
                 await Task.Delay(1000, stoppingToken);
             }
