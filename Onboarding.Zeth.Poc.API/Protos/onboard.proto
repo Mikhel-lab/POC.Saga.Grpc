@@ -41,7 +41,7 @@ message OnboardResponse{
 	string RIN = 1;
 	string Email = 2;
 	repeated Department department = 3;
-	repeated Configuration config = 4;
+	repeated DepartmentConfig config = 4;
 	
 }
 
